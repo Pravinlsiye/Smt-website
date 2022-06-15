@@ -18,10 +18,6 @@
 </head>
 
 <body>
-
-<video autoplay muted loop id="myVideo1">
-  <source src="../assets/rain.mp4" type="video/mp4" >
-</video>
   <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
@@ -45,7 +41,7 @@
               <a class="nav-link" href="/compose">ADD YOUR BOOK</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="/index#books">PRODUCTS</a>
+              <a class="nav-link" href="/index#product">PRODUCTS</a>
             </li>
  
             <li class="nav-item">
@@ -54,9 +50,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/index#contact">CONTACTS</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="/">LOGOUT</a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="/adminreg">ADMIN</a>
               </li>
@@ -64,7 +60,11 @@
         </div>
       </nav>
     </div>
-    
+    <div class="home">
+      <video autoplay muted loop>
+        <source src="../assets/rain.mp4" type="video/mp4" >
+      </video>
+      <div class="overlay">
     <div class="container text-center">
       <div class="row">
         <div class="col-md-7 col-sm-12  text-white">
@@ -76,9 +76,11 @@
           </button> -->
         </div>
         <div class="col-md-5 col-sm-12  h-25">
-          <img src="../assets/smtlogo.png" alt="Book" />
+          <img src="../assets/smtlogo.png" alt="SMT" />
         </div>
       </div>
+    </div>
+  </div>
     </div>
   </header>
 
@@ -103,201 +105,127 @@
         </div>
       </div>
     </section>
+    <section>
+      <style>
+        /* *{
+    box-sizing: border-box;
+} */
+.body1{
+    font-family: "Muli", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+.container1{
+    display: flex;
+    width: 90vw;
+}
+.panel1{
+    background-size: auto 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex:0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+    -webkit-transition: flex 700ms ease-in;
+}
+.panel1 h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+.panel1.active{
+    flex: 5;
+}
+.panel1:hover h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+@media (max-width: 480px){
+    .container1{
+        width: 100vw;
+    }
+    .panel1:nth-of-type(4),
+    .panel1:nth-of-type(5){
+        display: none;
+    }
+}
+      </style>
+      <body1>
+        <div class="container1">
+            <div class="panel1 active" style="background-image: url('../assets/img/1.jpg');">
+                <h3>my name is pravin 1</h3>
+        </div>
+        <div class="panel1" style="background-image: url('../assets/img/2.jpg');">
+            <h3>my name is pravin 2</h3>
+        </div>
+        <div class="panel1" style="background-image: url('../assets/img/3.jpg');">
+            <h3>my name is pravin 3</h3>
+        </div>
+        <div class="panel1" style="background-image: url('../assets/img/4.jpg');">
+            <h3>my name is pravin 4</h3>
+        </div>
+        <script src="script.js"></script>
+    </body1>
+    </section>
     
  
-     <section class="section-2 container-fluid p-0" id="books">
+     <!-- <section class="section-2 container-fluid p-0" id="books">
       <div class="cover">
-         <div class="overlay"></div> 
-        <div class="content text-center">
+         <div class="overlay1" id="product"></div>  
+          <div class="content text-center">
           <h1>Total Number of Products Available :<%=datas.length%></h1>
- 
+              <h1>Browse Our Inventory</h1>
         </div>
       </div>
+  -->
  
- 
-       <div class="container-fluid text-center" >
- 
- 
-        <div class="numbers d-flex flex-md-row flex-wrap justify-content-center "  >
- 
+       <!-- <div class="container-fluid text-center" >-->
+         <div class="contmain"  id="product">
+           <h1>Browse Our Inventory</h1>
+          <h5>Looking for the latest motor and non-motor salvage and buy directly from the listing page.</h5>
+    
+          </div>
+        <div class="numbers d-flex flex-md-row flex-wrap justify-content-center"  >
+           
  
             <% datas.forEach((e)=>{ %>
-                <div class="rect " style="cursor: pointer;" onclick="window.location.href='/new/<%=e.bname%>'" >
- 
+                <!-- <div class="rect " style="cursor: pointer;" onclick="window.location.href='/new/<%=e.bname%>'" >
+                  <img src="/uploads/<%=e.filename[0]%>" class="d-block"width="300px" height="300px"  alt="no-img" >
                   <h3 ><%=e.bname%></h3>
-                  <h5 >Brand : <%=e.name%></h3>
-                   <button class="btn btn-dark bgap"><i class="fas fa-arrow-right"></i></button>
+                  <h5 >Product : <%=e.name%></h5>
+                   <button class="btn btn-dark bgap"><i class="fas fa-arrow-right"></i></button> 
+                </div> -->
+          <div class="contmain">
+                <div class="cardtest" style="cursor: pointer;"  onclick="window.location.href='/new/<%=e.bname%>'">
+                 <img src="/uploads/<%=e.filename[0]%>" class="d-block"width="300px" height="200px"  alt="no-img" >
+                  <h1><%=e.bname%></h1>
+                  <p class="pricetest">Rs.<%=e.price%>/-</p>
+                  <p><%=e.email%></p>
+                  <p><button>View Details</button></p>
                 </div>
- 
+        </div>
           <% }) %>
  
  
         </div>
-      </div> 
-      <!-- <div class="card">
-        <img src="jeans3.jpg" alt="Denim Jeans" style="width:100%">
-        <h1>Tailored Jeans</h1>
-        <p class="price">$19.99</p>
-        <p>Some text about the jeans..</p>
-        <p><button>Add to Cart</button></p>
-      </div> -->
+       </div> 
  
         </div>
       </div>
     </section>
-    <!--<section class="section-4" id="test">
-      <img src="../assets/summa1.jpg">
-      <div class="container text-center">
-        <h1 class="text-dark">What our Reader's Say about us</h1>
-        <p class="text-secondary"></p>
-      </div>
-      <div class="team row ">
-        <div class="col-md-4 col-12 text-center">
-            <div class="card mr-2 d-inline-block shadow-lg">
-                <div class="card-img-top">
-                  <img src="../assets/san.png"   class="img-fluid rounded-circle w-50 p-4" alt="">
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">Santhosh</h3>
-                  <p class="card-text">
-                    It’s impossible not to mention Treasure-Chest when discussing book communities: Best collection site of all pre-used books with minimal amout of price.beyond we get all pre-user markings along the book.
-                  </p>
-                  <a href="#" class="text-secondary text-decoration-none"></a>
-                  <p class="text-black-50">@ KEC</p>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-4 col-12">
-            <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
-                <div class="carousel-inner text-center">
-                  <div class="carousel-item active">
-                    <div class="card mr-2 d-inline-block shadow">
-                      <div class="card-img-top">
-                        <img src="../assets/sow.jpg" class="img-fluid rounded-circle w-50 p-4" alt="no-img">
-                      </div>
-                      <div class="card-body">
-                        <h3 class="card-title">Sowbakiyan</h3>
-                        <p class="card-text">
-                            Treasure-Chest is doing a great job in not only bringing out the best in vibrant young people but also teaches them to drag their intelligence to attain the glorious path of victory 
-                        </p>
-                        <a href="#" class="text-secondary text-decoration-none"></a>
-                        <p class="text-black-50">@ KEC</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="card  d-inline-block mr-2 shadow">
-                      <div class="card-img-top">
-                        <img src="../assets/shake.jpg" class="img-fluid rounded-circle w-50 p-4" alt="">
-                      </div>
-                      <div class="card-body">
-                        <h3 class="card-title">Shekky</h3>
-                        <p class="card-text">
-                            One of the best blog that i have ever seen in my life , Awesome Services with their flexibility and goog quality of books. Best collection site of all pre-used books with minimal amout of price.
-                        </p>
-                        <a href="#" class="text-secondary text-decoration-none"></a>
-                        <p class="text-black-50">@vidhu</p>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-        </div>
-        </div>
-        <div class="col-md-4 col-12 text-center">
-            <div class="card mr-2 d-inline-block shadow-lg">
-                <div class="card-img-top">
-                  <img src="../assets/saran.jpg"  class="img-fluid rounded-circle w-50 p-4" alt="">
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title">Saran</h3>
-                  <p class="card-text">
-                    Very proud to be a part of Treasure Chest , had a  good experiened with the blog such a delighted one i were loved a lot. Best collection site of all pre-used books with minimal amout of price.
-                  </p>
-                  <a href="#" class="text-secondary text-decoration-none"></a>
-                  <p class="text-black-50">@ Kvb</p>
-                </div>
-              </div>
-        </div>
-      </div> -->
-
-
-      
-    </section> 
-    <!-- <section class="benefit-sec">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2 class="main-title">Key benefits</h2>
-            <p>Our benefits will change the way you buy parts.Order with confidence!</p>
-          </div>
-        </div>
-        <div class="benefit-box-main">
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <div class="card">
-              <i class="fa fa-award"></i>
-              <h4>Warranty</h4>
-              <p>Selectusedparts offers a limited warranty on all items sold!</p>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="card">
-              <i class="fa fa-undo"></i>
-              <h4>Easy Returns</h4>
-              <p>Ordered the wrong part? Enjoy peace of mind with easy returns!</p>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="card">
-              <i class="fas fa-lock"></i>
-              <h4>Security</h4>
-              <p>We always take care of our partners. Your data is always safe with us!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <div class="card">
-              <i class="fa fa-truck-loading"></i>
-              <h4>Fast Delivery</h4>
-              <p>Get the parts you need when you need them at ur door step!</p>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="card">
-              <i class="far fa-handshake"></i>
-              <h4>Reliability</h4>
-              <p>Selectusedparts  is a reliable partner in sourcing quality used OEM parts!</p>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="card">
-              <i class="far fa-money-bill-alt"></i>
-              <h4>Competitive Prices</h4>
-              <p>We have quality used parts available at the most competitive prices!</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <div class="card">
-              <i class="fa fa-hand-holding-usd"></i>
-              <h4>Easy Selling</h4>
-              <p>We handle all payment and customer support!</p>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="card">
-              <i class="fa fa-people-carry"></i>
-              <h4>Reach More Customers</h4>
-              <p></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </section> -->
     
   </main>
   <footer id="contact">

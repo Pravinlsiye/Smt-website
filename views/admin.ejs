@@ -18,9 +18,7 @@
 </head>
  
 <body>
-  <video autoplay muted loop id="myVideo1">
-    <source src="../assets/rain.mp4" type="video/mp4" >
-  </video>
+  
   <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
@@ -63,9 +61,11 @@
         </div>
       </nav>
     </div>
-
-    
-
+    <div class="home">
+      <video autoplay muted loop>
+        <source src="../assets/rain.mp4" type="video/mp4" >
+      </video>
+      <div class="overlay">
     <div class="container text-center">
       <div class="row">
         <div class="col-md-7 col-sm-12  text-white">
@@ -81,6 +81,8 @@
         </div>
       </div>
     </div>
+    </div>
+  </div>
   </header>
   <main>
     <section class="section-1">
@@ -106,7 +108,7 @@
  
      <section class="section-2 container-fluid p-0" id="books">
       <div class="cover">
-         <div class="overlay"></div> 
+         <div class="overlay1"></div> 
         <div class="content text-center">
           <h1>Total Number of Products Available : <%=datas.length%></h1>
  
@@ -130,7 +132,7 @@
                    
                 </form>
                   <h3 ><%=e.bname%></h3>
-                  <h5 >Brand : <%=e.name%></h3>
+                  <h5 >Product : <%=e.name%></h3>
                    <button class="btn btn-dark bgap"><i class="fas fa-arrow-right"></i></button>
                 </div>
  

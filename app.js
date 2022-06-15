@@ -61,9 +61,10 @@ let regmodel=mongoose.model('reg',regSchema);
 
 let Bookingmodel=mongoose.model('booking',bookingSchema);
 
-app.get('/',(req,res)=>{
-    res.render('login');
-});
+ app.get('/login',(req,res)=>{
+     res.render('login');
+ });
+
 
 app.get('/register',(req,res)=>{
     res.render('register')
@@ -79,7 +80,26 @@ app.get('/iregister',(req,res)=>{
 app.get('/ilogin',(req,res)=>{
     res.render('ilogin');
 })
+app.get('/test',(req,res)=>{
+    picmodel.find({},(err,found)=>{
+        if(!err){
+            res.render('test',{data:found})
+        }else{
+            console.log(err);
+        }
+    })
+});
 
+//changed here for login
+app.get('/',(req,res)=>{
+    picmodel.find({},(err,found)=>{
+        if(!err){
+            res.render('index',{datas:found})
+        }else{
+            console.log(err);
+        }
+    })
+});
 app.get('/index',(req,res)=>{
 
     picmodel.find({},(err,found)=>{
@@ -103,6 +123,8 @@ app.get('/new/:topic',(req,res)=>{
         }
     })
 })
+
+
 
 app.get('/data',(req,res)=>{
     res.render('data');
@@ -141,7 +163,7 @@ app.get('/invalid',(req,res)=>{
 app.get('/sucess',(req,res)=>{
     Bookingmodel.findOne({"rollnum":rollnum},(err,found)=>{
         if(!err){
-            res.render('sucess',{data1:found});
+            res.render('sucess',{data:found});
         }else{
             console.log(err);
         }
@@ -153,6 +175,12 @@ app.get('/booking',(req,res)=>{
     res.render('booking');
 })
 
+app.get('/product',(req,res)=>{
+    res.render('product');
+})
+app.get('/home',(req,res)=>{
+    res.render('home');
+})
 
 app.post('/',(req,res)=>{
     let name=req.body.name;

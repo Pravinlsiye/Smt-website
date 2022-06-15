@@ -69,16 +69,17 @@
 
 <form action="/compose" method="POST" enctype="multipart/form-data">
     <div class="form-group">
-    <label >Name of the Product</label><br>
+    <label >Product Name</label><br>
     <input type="text" name="name1" class="form-control" autocomplete="off" required  minlength="2" ><br> 
-    <!-- <label >Price of the Product</label><br>
-    <input type="number" name="price" class="form-control " min="0" max="10000" step="any" autocomplete="off" required  ><br>  -->
-    <label >Brand Name</label><br>
+    
+    <label >Product type</label><br>
     <input type="text" name="name2" class="form-control" autocomplete="off"  required minlength="3"><br>
-    <label >Launch Year</label><br>
+    <label >Price of the Product</label><br>
+    <input type="number" name="price" class="form-control " min="0" max="1000000" step="any" autocomplete="off" required  ><br> 
+    <label >Quantity Available</label><br>
     <input type="number" name="num" class="form-control" autocomplete="off" required ><br>
-    <label >Total price</label><br>
-    <input type="number" name="email" class="form-control"  required ><br>
+    <label >Product Description</label><br>
+    <input type="text" name="email" class="form-control"  required ><br>
     <label for="book-pic" >Upload Product image</label><br>
     <input id="book-pic"  type="file" name="img" accept="image/*" multiple required ><br>
     
