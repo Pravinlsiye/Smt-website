@@ -18,9 +18,9 @@ let regname="";
 let pswd="";
 let cpswd="";
 let rollnum="";
-
+//mongodb+srv://san:1234@cluster0.hjlcs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 //   const uri="mongodb+srv://santhosh:1234@cluster0.xq2wt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
- const uri="mongodb+srv://san:1234@cluster0.hjlcs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+ const uri="mongodb+srv://pravinlsiye:pravinlsiye@cluster0.8kxlqsy.mongodb.net/?retryWrites=true&w=majority"
 mongoose.connect(  uri ||'mongodb://localhost:27017/picdb');
 
 mongoose.connection.on('connected',()=>{
